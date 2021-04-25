@@ -33,3 +33,14 @@ btnCounter.style.backgroundColor = getRandomRgbColor();
 Получайте рандомную картинку с помощью Lorem Picsum (ссылку прикрепил). 
 Обратите внимание на раздел Advanced Usage на сайте. 
 (Там показано, как можно получить несколько различных изображений по одной ссылке)*/
+
+const IMGS_STORAGE_LINK = 'https://picsum.photos/200/300?random=';
+const btnImg = document.querySelector("#btn-img");
+const img = document.querySelector(".img");
+btnImg.addEventListener("click", getImageLink(img));
+
+function getImageLink(elem,https) {
+  let count = 1;
+  let link = https ? https : IMGS_STORAGE_LINK;
+  return () =>elem.src =  link + ++count;
+}
