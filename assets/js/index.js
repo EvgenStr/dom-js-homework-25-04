@@ -27,3 +27,9 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
+btnCounter.style.backgroundColor = getRandomRgbColor();
+
+/*2. Создайте кнопку, которая при нажатии будет отображать в теге img рандомную картинку.
+Получайте рандомную картинку с помощью Lorem Picsum (ссылку прикрепил). 
+Обратите внимание на раздел Advanced Usage на сайте. 
+(Там показано, как можно получить несколько различных изображений по одной ссылке)*/
