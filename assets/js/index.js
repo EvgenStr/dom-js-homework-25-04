@@ -5,6 +5,7 @@
  Значение счетчика должно отображаться в innerText кнопки.*/
 
 const btnCounter = document.querySelector("#btn-counter");
+btnCounter.style.backgroundColor = getRandomRgbColor();
 const decrease = ({ target }) => {
   if (target.dataset.counter <= 0) {
     target.removeEventListener("click", decrease);
@@ -27,7 +28,6 @@ function getRandomInt(min, max) {
   max = Math.floor(max);
   return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-btnCounter.style.backgroundColor = getRandomRgbColor();
 
 /*2. Создайте кнопку, которая при нажатии будет отображать в теге img рандомную картинку.
 Получайте рандомную картинку с помощью Lorem Picsum (ссылку прикрепил). 
@@ -39,8 +39,8 @@ const btnImg = document.querySelector("#btn-img");
 const img = document.querySelector(".img");
 btnImg.addEventListener("click", getImageLink(img));
 
-function getImageLink(elem,https) {
+function getImageLink(elem, https) {
   let count = 1;
   let link = https ? https : IMGS_STORAGE_LINK;
-  return () =>elem.src =  link + ++count;
+  return () => elem.src = link + ++count;
 }
