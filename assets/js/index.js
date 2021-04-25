@@ -5,13 +5,24 @@
  Значение счетчика должно отображаться в innerText кнопки.*/
 
 const btnCounter = document.querySelector("#btn-counter");
-// console.log(btnCounter)
 const decrease = ({ target }) => {
   if (target.dataset.counter <= 0) {
     target.removeEventListener("click", decrease);
+    return;
   }
   target.innerText = --target.dataset.counter;
 }
+btnCounter.addEventListener("click", decrease);
 
-btnCounter.addEventListener("click", decrease)
+/*1.2 Написать функцию getRandomColor, которая будет рандомно генерировать
+ строку с rgb цветом (Math.Random от 0 до 255 для каждого цвета).
+  При каждом нажатии на кнопку цвет фона в ней должен меняться рандомно.*/
 
+function getRandomRgbColor(){
+
+}
+function getRandomIntInclusive(min, max) {
+  min = Math.ceil(min);
+  max = Math.floor(max);
+  return Math.floor(Math.random() * (max - min + 1)) + min; 
+}
