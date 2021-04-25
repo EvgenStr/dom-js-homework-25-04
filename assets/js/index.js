@@ -7,6 +7,5 @@
 const btnCounter = document.querySelector("#btn-counter");
 
 const decrease = ({ target }) => {
-
   target.innerText = --target.dataset.counter;
 }
