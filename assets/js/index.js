@@ -5,7 +5,13 @@
  Значение счетчика должно отображаться в innerText кнопки.*/
 
 const btnCounter = document.querySelector("#btn-counter");
-
+// console.log(btnCounter)
 const decrease = ({ target }) => {
+  if (target.dataset.counter <= 0) {
+    target.removeEventListener("click", decrease);
+  }
   target.innerText = --target.dataset.counter;
 }
+
+btnCounter.addEventListener("click", decrease)
+
