@@ -6,15 +6,15 @@
 
 const btnCounter = document.querySelector("#btn-counter");
 btnCounter.style.backgroundColor = getRandomRgbColor();
-const decrease = ({ target }) => {
+const decrementCounter = ({ target }) => {
   if (target.dataset.counter <= 0) {
-    target.removeEventListener("click", decrease);
+    target.removeEventListener("click", decrementCounter);
     return;
   }
   target.style.backgroundColor = getRandomRgbColor();
   target.innerText = --target.dataset.counter;
 }
-btnCounter.addEventListener("click", decrease);
+btnCounter.addEventListener("click", decrementCounter);
 
 /*1.2 Написать функцию getRandomColor, которая будет рандомно генерировать
  строку с rgb цветом (Math.Random от 0 до 255 для каждого цвета).
